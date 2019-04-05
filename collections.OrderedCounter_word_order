@@ -1,0 +1,23 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+n = int(input())
+wordDict = OrderedDict()
+for i in range(n):
+    word = input()
+    wordDict.setdefault(word,0)
+    wordDict[word]+=1
+print(len(wordDict))
+print(*wordDict.values())
+
+OR
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict,Counter
+n = int(input())
+class OrderedCounter(Counter, OrderedDict):
+    pass
+
+wordDict = OrderedCounter(input() for _ in range(n))
+
+print(len(wordDict))
+print(*wordDict.values())
